@@ -1,0 +1,21 @@
+package org.tufcookie.time.service;
+
+import org.tufcookie.time.mapper.TimeMapper;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class TimeService2 {
+	
+	private final TimeMapper timeMapper;
+	
+	public String getTime() {
+		
+		String time = timeMapper.getTime();
+		
+		System.out.println(time);
+		
+		return time;
+	}
+
+}

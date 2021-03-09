@@ -1,0 +1,18 @@
+package org.tufcookie.board;
+
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.tufcookie.board.config.BoardConfig;
+import org.tufcookie.common.config.CommonConfig;
+
+import lombok.extern.log4j.Log4j;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes= {CommonConfig.class, BoardConfig.class})
+@Log4j
+public class BoardTests {
+	
+	
+
+}

@@ -1,0 +1,20 @@
+package org.tufcookie.time.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.tufcookie.time.mapper.TimeMapper;
+
+@Service
+public class TimeServiceImpl implements TimeService{
+	
+	@Autowired
+	TimeMapper timeMapper;
+	
+	@Override
+	public String getTime() {
+		
+		return timeMapper.getTime();
+		
+	}
+	
+}

@@ -1,0 +1,7 @@
+package org.zerock.controller;
+
+public class TodoControllerTests extends AbstractControllerTests{
+
+	
+	
+}

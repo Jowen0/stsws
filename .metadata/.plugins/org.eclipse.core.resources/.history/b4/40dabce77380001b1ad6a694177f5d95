@@ -1,0 +1,19 @@
+package org.zerock.board.service;
+
+import java.util.List;
+
+import org.zerock.board.dto.BoardDTO;
+import org.zerock.common.dto.PageDTO;
+
+public class BoardServiceImpl implements BoardService {
+	//default Method는 Override 하지 않는다.
+	
+	
+	
+	@Override
+	public List<BoardDTO> getPageList(PageDTO pageDTO) {
+		
+		return null;
+	}
+
+}

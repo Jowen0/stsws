@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;AbstractControllerTests.java&apos; to &apos;j0308_js/src/main/java/org.tufcookie.common.config&apos;&#x0D;&#x0A;- Original project: &apos;0303&apos;&#x0D;&#x0A;- Destination element: &apos;j0308_js/src/main/java/org.tufcookie.common.config&apos;&#x0D;&#x0A;- Original element: &apos;org.zerock.controller.AbstractControllerTests.java&apos;" description="Copy compilation unit" destination="=j0308_js/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;org.tufcookie.common.config" element1="/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/&lt;org.zerock.controller{AbstractControllerTests.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1615192768892" units="1" version="1.0"/>
+</session>

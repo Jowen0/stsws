@@ -1,0 +1,14 @@
+package org.zerock.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class TodoDTO {
+	
+	private Integer tno; //int는 기본적으로 0이라는 값을 가지기 때문에 Integer를 쓴다.
+	private String title;
+	private boolean complete; //기본값 false - 완성이 안됐다.
+	
+}

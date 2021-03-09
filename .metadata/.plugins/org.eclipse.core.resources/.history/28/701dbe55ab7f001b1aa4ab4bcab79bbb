@@ -1,0 +1,10 @@
+package org.zerock.common.comfig;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class CommonConfig {
+	
+	
+	
+}

@@ -1,0 +1,5 @@
+package org.zerock.common.config;
+
+public class WebConfig {
+
+}

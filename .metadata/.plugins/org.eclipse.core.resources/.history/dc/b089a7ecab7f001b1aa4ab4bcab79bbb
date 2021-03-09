@@ -1,0 +1,5 @@
+package org.zerock.main.common;
+
+public class ConfigLoadTests {
+
+}

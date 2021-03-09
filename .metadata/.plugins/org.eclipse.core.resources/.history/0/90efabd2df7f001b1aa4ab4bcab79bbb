@@ -1,0 +1,5 @@
+package org.tufcookie.time.mapper;
+
+public interface TimeMapper {
+
+}

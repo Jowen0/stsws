@@ -1,0 +1,5 @@
+package org.tufcookie.board.config;
+
+public class BoardConfig {
+
+}

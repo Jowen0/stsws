@@ -1,0 +1,43 @@
+package org.zerock.board.controller;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.zerock.board.dto.BoardDTO;
+import org.zerock.board.service.BoardService;
+import org.zerock.common.dto.PageDTO;
+import org.zerock.common.dto.PageMaker;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
+
+@Controller
+@RequestMapping("/board")
+@Log4j
+@RequiredArgsConstructor
+public class BoardController {
+	
+	private final BoardService service;
+	
+	@GetMapping({"/","/list"}) //return을 void로 쓰지 않은 이유
+	public String list(PageDTO pageDTO, Model model) {
+		
+		log.info("list......................");
+		
+		model.addAttribute("list", service.getPageList(pageDTO));
+		model.addAttribute("pageMaker", new PageMaker(pageDTO, service.getTotalCount()));
+		
+		return "/board/list";
+	}
+	
+	
+	public String registerPost(@Valid BoardDTO dto, BindingResult result) {
+		
+		
+		return null;
+	}
+}

@@ -1,0 +1,8 @@
+package org.zerock.common.dto;
+
+public class PageDTO {
+	
+	private int page;
+	private int perSheet;
+	
+}

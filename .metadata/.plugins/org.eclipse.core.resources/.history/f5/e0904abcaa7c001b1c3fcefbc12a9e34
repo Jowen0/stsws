@@ -1,0 +1,21 @@
+package org.zerock.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import lombok.extern.log4j.Log4j;
+
+@Controller
+@RequestMapping("/todo/*") //요즘 트랜드 - 43분
+@Log4j
+public class TodoController {
+	
+	@GetMapping("/add") //spring 4.3부터 GET/POST Mapping 지원
+	public void add() {
+		
+		
+		
+	}
+	
+}

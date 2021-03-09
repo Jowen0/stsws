@@ -1,0 +1,5 @@
+package org.tufcookie.board.dto;
+
+public class BoardDTO {
+
+}

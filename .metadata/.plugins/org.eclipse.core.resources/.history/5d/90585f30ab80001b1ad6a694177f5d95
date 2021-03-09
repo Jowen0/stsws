@@ -1,0 +1,5 @@
+package org.tufcookie.common.dto;
+
+public class PageDTO {
+
+}

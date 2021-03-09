@@ -1,0 +1,36 @@
+
+<%@include file="../includes/header.jsp"%>
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+					
+<h2>${list }</h2>
+<h3>${pageMaker }</h3>
+					
+<ul class="pagination">
+  <c:if test="${pageMaker.prev}">
+    <li class="page-item">
+      <a class="page-link" href="${pageMaker.start -1 }" tabindex="-1">Previous</a>
+    </li>
+  </c:if>
+  <c:forEach begin = "${pageMaker.start }" end = "${pageMaker.end }" var="num">
+    <li class="page-item ${num == pageMaker.pageInfo.page?"active":"" }"><a class="page-link" href="?page=${num }">${num }</a></li>
+  </c:forEach>
+<!--     <li class="page-item active">
+      <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+    </li> -->
+  <c:if test="${pageMaker.next }">
+    <li class="page-item">
+      <a class="page-link" href="${pageMaker.end + 1 }">Next</a>
+    </li>
+ </c:if>
+    <!-- 부트가서 타입루프를 쓰면 깔끔하게 처리할 수 있다. -->
+</ul>
+
+<script>
+
+
+
+</script>					
+					
+<%@include file="../includes/footer.jsp"%>               
