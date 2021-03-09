@@ -1,0 +1,28 @@
+package org.tufcookie.common.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor //일반 생성자를 만들면 이걸 추가해야 되는가?
+public class PageDTO {
+	
+	private Integer page;
+	private Integer perSheet;
+	
+	//Default 설정
+	public PageDTO() {
+		
+		page = 1;
+		perSheet = 10;
+		
+	}
+	
+	public int getPage() {
+		
+		//Getter로 깔끔하게 만들거나, Validation을 추가해서 예외처리를 한다.
+		
+		return (page - 1) * perSheet;
+		
+	}
+}

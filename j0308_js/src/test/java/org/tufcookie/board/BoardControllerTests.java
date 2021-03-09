@@ -17,10 +17,7 @@ public class BoardControllerTests extends AbstractControllerTests{
 		
 		log.info(mockMvc);
 		
-		mockMvc.perform(MockMvcRequestBuilders.get("/board/list")).andDo(print());
-		
-//		ModelAndView view = new ModelAndView();
-		//view.setView(list);
+		mockMvc.perform(MockMvcRequestBuilders.get("/board/list")).andDo(print( ));
 		
 	}
 

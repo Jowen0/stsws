@@ -1,0 +1,20 @@
+package org.tufcookie.common.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class PageDTO {
+	
+	private Integer page;
+	private Integer perSheet;
+	
+	//Default 설정
+	public PageDTO() {
+		
+		page = 1;
+		perSheet = 10;
+		
+	}
+}

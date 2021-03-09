@@ -7,6 +7,6 @@ import org.tufcookie.common.dto.PageDTO;
 
 public interface BoardService {
 	
-	List<BoardDTO> getPageList(PageDTO pagdDTO);
+	List<BoardDTO> getList(PageDTO pageDTO);
 	
 }
