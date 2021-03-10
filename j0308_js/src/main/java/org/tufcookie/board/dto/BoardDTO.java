@@ -1,6 +1,8 @@
 package org.tufcookie.board.dto;
 
-import java.util.Date;
+
+
+import java.sql.Date;
 
 import lombok.Builder;
 import lombok.Data;

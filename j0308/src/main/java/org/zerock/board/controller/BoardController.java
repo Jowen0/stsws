@@ -37,7 +37,7 @@ public class BoardController {
 		log.info("list......................");
 		
 		model.addAttribute("list", service.getPageList(pageDTO));
-		model.addAttribute("pageMaker", new PageMaker(pageDTO, service.getTotalCount()));
+		model.addAttribute("pageMaker", new PageMaker(pageDTO, service.getTotalCount(pageDTO)));
 		
 		return "/board/list";
 	}

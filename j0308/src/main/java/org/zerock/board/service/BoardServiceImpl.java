@@ -24,18 +24,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public List<BoardDTO> getPageList(PageDTO pageDTO) {
 		
-		return mapper.getList(pageDTO.getSkip(), pageDTO.getPerSheet())
-		.stream().map(board -> {
-			BoardDTO dto = new BoardDTO();
-			dto.setBno(board.getBno());
-			dto.setTitle(board.getTitle());
-			dto.setContent(board.getContent());
-			dto.setWriter(board.getWriter());
-			dto.setRegDate(board.getRegDate());
-			dto.setUpdateDate(board.getUpdateDate());
-			return dto;
-		}).collect(Collectors.toList());
-		
+		return mapper.getList(pageDTO.getSkip(),
+							  pageDTO.getPerSheet(),
+							  pageDTO.getArr(),
+							  pageDTO.getKeyword())
+		.stream().map(board -> toDTO(board)).collect(Collectors.toList());
 		//stream : 빨대
 		//stream 빨대로 넣어서 중간에 함수를 넣고, 뒤에 collect 빨대로 수집한다.
 		//map - 
@@ -46,9 +39,9 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public int getTotalCount() {
+	public int getTotalCount(PageDTO pageDTO) {
 		
-		return mapper.getTotalCount();
+		return mapper.getTotalCount(pageDTO.getArr(), pageDTO.getKeyword());
 	}
 
 	@Override
@@ -58,6 +51,12 @@ public class BoardServiceImpl implements BoardService {
 		
 		mapper.insert(vo);
 		
+	}
+
+	@Override
+	public BoardDTO readOne(Integer bno) {
+		
+		return toDTO(mapper.selectOne(bno));
 	}
 
 }

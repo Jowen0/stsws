@@ -1,5 +1,8 @@
 package org.zerock.board;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +27,23 @@ public class BoardTests {
 	@Autowired
 	BoardService service;
 	
-	@Test void testList2( ) {
-		
-		boardMapper.getList(0, 10)
-		.forEach(vo -> log.info(vo));
-		
-	}
+//	@Test
+//	public void testEx1() {
+//		
+//		PageDTO dto = new PageDTO();
+//		
+//		boardMapper.ex1(dto).forEach(board -> log.info(board));
+//		
+//	}
+//	
+//	
+//	@Test
+//	public void testList2( ) {
+//		
+//		boardMapper.getList(0, 10)
+//		.forEach(vo -> log.info(vo));
+//		
+//	}
 	
 	
 	@Test
@@ -37,7 +51,11 @@ public class BoardTests {
 		
 		//boardMapper.getList(10,10).forEach(board -> log.info(board));
 		
-		service.getPageList(PageDTO.builder().page(1).build())
+		service.getPageList(PageDTO.builder()
+				.page(1)
+				.type("tcw")
+				.keyword("10")
+				.build())
 		.forEach(dto -> log.info(dto));
 		
 		//밖에서는 인터페이스 쓰는 것과 람다 쓰는 것을 싫어한다.

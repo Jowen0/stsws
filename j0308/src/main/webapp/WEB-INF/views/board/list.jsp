@@ -38,6 +38,8 @@
 <form class="actionForm" action="/board/list" method="get">
 	<input type='hidden' name='page' value='${pageDTO.page }'>
 	<input type='hidden' name='perSheet' value='${pageDTO.perSheet }'>
+	<input type='hidden' name='perSheet' value='${pageDTO.type }'>
+	<input type='hidden' name='perSheet' value='${pageDTO.keyword }'>
 </form>
 <script>
 

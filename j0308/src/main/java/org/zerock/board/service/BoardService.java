@@ -10,10 +10,26 @@ public interface BoardService {
 	
 	List<BoardDTO> getPageList(PageDTO pageDTO);
 	
-	int getTotalCount();
+	int getTotalCount(PageDTO pageDTO);
 	
 	//만들어지는 게시물의 번호를 가져오려면 트랜잭션 기술이 필요하다.
 	void register(BoardDTO boardDTO);
+	
+	BoardDTO readOne(Integer bno);
+	
+	
+	default BoardDTO toDTO(Board board) {
+		
+		BoardDTO dto = new BoardDTO();
+		dto.setBno(board.getBno());
+		dto.setTitle(board.getTitle());
+		dto.setContent(board.getContent());
+		dto.setWriter(board.getWriter());
+		dto.setRegDate(board.getRegDate());
+		dto.setUpdateDate(board.getUpdateDate());
+		return dto;
+		
+	}
 	
 	default Board toDomain(BoardDTO dto) {
 		//VO나 DTO가 서로를 알고 있는게 싫어서

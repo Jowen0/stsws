@@ -43,7 +43,6 @@ function sendAjax(data) {
 	.then(res => {
 		if(!res.ok){
 			throw new Error(res);
-			return;
 		}
 		return res.text() //함수를 넣어도 되지만 화살표 함수를 쓴다. 자바스크립트에서는 화살표 함수라고 한다.	
 	})
