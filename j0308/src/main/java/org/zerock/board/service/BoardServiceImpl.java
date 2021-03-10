@@ -56,7 +56,7 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardDTO readOne(Integer bno) {
 		
-		return toDTO(mapper.selectOne(bno));
+		return toDTO(mapper.selectOne(bno) );
 	}
 
 }

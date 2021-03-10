@@ -1,8 +1,22 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="../includes/header.jsp"%>
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+
+<div class="selectDiv">
+	<select name='search' class='search'>
+		<option value="">---------------</option>
+		<option value="t">제목</option>
+		<option value="c">내용</option>
+		<option value="w">작성자</option>
+		<option value="tc">제목+내용</option>
+	</select>
+	<input name="keyword">
+	<button class="searchBtn">검색</button>
+</div>
 
 <ul>
   <c:forEach items="${list }" var="board">
@@ -19,7 +33,7 @@
 <ul class="pagination">
   <c:if test="${pageMaker.prev}">
     <li class="page-item">
-      <a class="page-link" href="${pageMaker.start -1 }" tabindex="-1">Previous</a>
+      <a class="page-link" href="${pageMaker.start -10 }" tabindex="-1">Previous</a>
     </li>
   </c:if>
   <c:forEach begin = "${pageMaker.start }" end = "${pageMaker.end }" var="num">
@@ -38,8 +52,8 @@
 <form class="actionForm" action="/board/list" method="get">
 	<input type='hidden' name='page' value='${pageDTO.page }'>
 	<input type='hidden' name='perSheet' value='${pageDTO.perSheet }'>
-	<input type='hidden' name='perSheet' value='${pageDTO.type }'>
-	<input type='hidden' name='perSheet' value='${pageDTO.keyword }'>
+	<input type='hidden' name='type' value='${pageDTO.type }'>
+	<input type='hidden' name='keyword' value='${pageDTO.keyword }'>
 </form>
 <script>
 
@@ -78,7 +92,10 @@ document.querySelectorAll('.listA').forEach(board => {
 		
 	}, false);
 })
-
+	
+	//검색 타입 / 키워드
+	
+	
 </script>					
 					
 <%@include file="../includes/footer.jsp"%>               

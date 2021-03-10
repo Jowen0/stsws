@@ -1,9 +1,0 @@
-package org.zerock.dao;
-
-import org.zerock.mapper.TimeMapper;
-
-public class TimeMapperTests {
-	
-	TimeMapper timeMapper;
-	
-}

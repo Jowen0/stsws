@@ -5,21 +5,15 @@
 <mapper namespace="org.tufcookie.board.mapper.BoardMapper">
 	
 	<select id="getList" resultType="org.tufcookie.board.domain.Board">
-	<![CDATA[
 		select * from tbl_board order by bno desc limit #{page}, #{perSheet}
-	]]> 
 	</select>
 	
 	<select id="getTotalCount" resultType="int">
-	<![CDATA[
 		select count(bno) from tbl_board
-	]]> 
 	</select>
 	
 	<insert id="insert">
-	<![CDATA[
 		insert into tbl_board (title, content, writer)
 		values (#{title}, #{content}, #{writer})
-	]]>
 	</insert>
 </mapper>
