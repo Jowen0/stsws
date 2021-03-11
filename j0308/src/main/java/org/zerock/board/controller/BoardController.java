@@ -21,7 +21,6 @@ import org.zerock.common.dto.PageMaker;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;
-import sun.jvm.hotspot.memory.HeapBlock.Header;
 
 @Controller
 @RequestMapping("/board")

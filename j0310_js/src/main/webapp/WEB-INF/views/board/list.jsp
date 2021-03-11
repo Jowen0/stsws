@@ -6,7 +6,7 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
                     
-<ul>
+<ul class="boardList">
 <c:forEach items="${list }" var="board">
 <li><a href="${board.bno }">${board}</a></li>
 </c:forEach>
@@ -40,16 +40,23 @@
 const selOne = document.querySelector.bind(document);
 const selAll = document.querySelectorAll.bind(document);
 	
-const event = document.addEventListener.bind(document);
+const addEvent = function (param,event,func,cap) {
+	
+	const target = document.querySelector(param);
+	
+	target.addEventListener(event,func,cap);
+	
+	return target;
+}
 
 const actionForm = selOne(".actionForm");
 
-console.log(selOne);
+/* console.log(selOne);
 console.log(actionForm);
-console.log(event);
+console.log(addEvent); */
 
-selOne(".pagination").addEventListener("click", function(e) {
-	
+addEvent(".pagination","click", function(e) {
+
 	e.preventDefault();
 	//e.stoppropagation();
 	const target = e.target;
@@ -62,15 +69,27 @@ selOne(".pagination").addEventListener("click", function(e) {
 	
 	selOne(".actionForm input[name='page']").value = pageNum;
 	actionForm.submit();
-	
-	
+	 
 }, false)
+
+for (let selAllElement of selAll(".boardList")) {
+
+    addEvent(selAllElement,"click",function(e){
+
+        e.preventDefault();
+        e.stoppropagation();
+
+        const target = e.target;
+
+        console.log(taget);
+
+    },false)
+    
+}
+
 
 </script>
 
-
 ${pageMaker }
-
-
 
 <%@include file="../includes/footer.jsp"%>               
