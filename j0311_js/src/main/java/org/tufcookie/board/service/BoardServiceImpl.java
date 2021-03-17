@@ -21,10 +21,14 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public List<BoardDTO> getListPage(PageDTO pageDTO) {
 	
-		return mapper.getList(pageDTO.getSkip(), pageDTO.getPerSheet(), pageDTO.getArr(), pageDTO.getKeyword())
+		return mapper.getList(pageDTO.getSkip(),
+							  pageDTO.getPerSheet(), 
+							  pageDTO.getArr(), 
+							  pageDTO.getKeyword())
 				.stream()
 				.map(board -> toDTO(board))
 				.collect(Collectors.toList());
+		
 		
 	}
 
@@ -32,6 +36,33 @@ public class BoardServiceImpl implements BoardService{
 	public Integer getTotal(PageDTO pageDTO) {
 		
 		return mapper.getTotalCount(pageDTO.getArr(), pageDTO.getKeyword());
+	}
+
+	@Override
+	public void register(BoardDTO boardDTO) {
+		
+		mapper.insert(toDomain(boardDTO));
+		
+	}
+
+	@Override
+	public BoardDTO readOne(Integer bno) {
+		
+		return toDTO(mapper.selectOne(bno));
+	}
+
+	@Override
+	public void modify(BoardDTO boardDTO) {
+		
+		mapper.update(toDomain(boardDTO));
+		
+	}
+
+	@Override
+	public void remove(Integer bno) {
+		
+		mapper.delete(bno);
+		
 	}
 
 }

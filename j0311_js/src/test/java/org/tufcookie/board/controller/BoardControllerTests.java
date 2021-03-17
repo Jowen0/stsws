@@ -18,7 +18,7 @@ public class BoardControllerTests extends AbstractControllerTests{
 		
 		log.info(mockMvc);
 		
-		mockMvc.perform(MockMvcRequestBuilders.get("/board/list"))
+		mockMvc.perform(MockMvcRequestBuilders.get("/board/modify"))
 		.andExpect(status().isOk())
 		.andDo(print());
 		

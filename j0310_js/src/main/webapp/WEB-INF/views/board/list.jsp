@@ -58,7 +58,7 @@ console.log(addEvent); */
 addEvent(".pagination","click", function(e) {
 
 	e.preventDefault();
-	//e.stoppropagation();
+	//e.stopPropagation();
 	const target = e.target;
 	
 	console.log(target);
@@ -86,7 +86,6 @@ for (let selAllElement of selAll(".boardList")) {
     },false)
     
 }
-
 
 </script>
 

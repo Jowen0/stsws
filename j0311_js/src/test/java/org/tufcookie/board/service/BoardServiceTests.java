@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.tufcookie.board.config.BoardConfig;
+import org.tufcookie.board.dto.BoardDTO;
 import org.tufcookie.common.config.CommonConfig;
 import org.tufcookie.common.dto.PageDTO;
 
@@ -38,6 +39,57 @@ public class BoardServiceTests {
 		pageDTO.setKeyword("10");
 		
 		log.info(service.getTotal(pageDTO));
+		
+	}
+	
+	@Test
+	public void testRegister( ) {
+		
+		BoardDTO boardDTO = BoardDTO.builder()
+				.title("테스트254")
+				.content("내용 테스트254")
+				.writer("user00")
+				.build();
+		
+		service.register(boardDTO);
+		
+		log.info(boardDTO);
+		
+	}
+	
+	@Test
+	public void testReadOne() {
+		
+		Integer bno = 254;
+		
+		log.info(service.readOne(bno));
+		
+	}
+	
+	@Test
+	public void testModify() {
+		
+		BoardDTO boardDTO = BoardDTO.builder()
+				.bno(254)
+				.title("테스트254")
+				.content("내용 테스트254")
+				.writer("user00")
+				.build();
+		
+		service.modify(boardDTO);
+		
+		log.info(boardDTO);
+		
+	}
+	
+	@Test
+	public void testRemove() {
+		
+		Integer bno = 252;
+		
+		service.remove(bno);
+		
+		log.info(bno);
 		
 	}
 

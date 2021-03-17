@@ -44,8 +44,6 @@ public class BoardController {
 	@GetMapping("/register")
 	public void register() {
 		
-		
-		
 	}
 	
 	@PostMapping(value = "/register", produces = {"text/plain"})
@@ -71,4 +69,5 @@ public class BoardController {
 		
 		return new ResponseEntity<String>("success", HttpStatus.OK);
 	}
+	
 }

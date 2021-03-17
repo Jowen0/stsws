@@ -15,4 +15,12 @@ public interface BoardMapper {
 	Integer getTotalCount(@Param("arr") String[] arr,
 						  @Param("keyword") String keyword);
 	
+	void insert(Board board);
+	
+	Board selectOne(Integer bno);
+	
+	void update(Board board);
+	
+	void delete(Integer bno);
+	
 }

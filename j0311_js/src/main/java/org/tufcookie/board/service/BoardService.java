@@ -12,6 +12,16 @@ public interface BoardService {
 	
 	Integer getTotal(PageDTO pageDTO);
 	
+	void register(BoardDTO boardDTO);
+	
+	BoardDTO readOne(Integer bno);
+	
+	void modify(BoardDTO boardDTO);
+	
+	void remove(Integer bno);
+	
+	
+	
 	default Board toDomain(BoardDTO dto) {
 		
 		return Board.builder()

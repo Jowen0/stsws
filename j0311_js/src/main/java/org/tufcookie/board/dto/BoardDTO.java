@@ -2,6 +2,8 @@ package org.tufcookie.board.dto;
 
 import java.sql.Date;
 
+import javax.validation.constraints.NotEmpty;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,7 +18,10 @@ import lombok.ToString;
 public class BoardDTO {
 	
 	private Integer bno;
-	private String title, content, writer;
+	private String title;
+	@NotEmpty
+	private String content;
+	private String writer;
 	private Date regdate,updateDate;
 
 }

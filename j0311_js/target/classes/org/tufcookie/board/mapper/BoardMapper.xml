@@ -6,7 +6,7 @@
 	
 	<sql id="search">
 		<where>
-			<if test="arr != null"> 
+			<if test="arr != null">
 				<foreach collection="arr" index="key" item="val" separator="OR" open="(" close=")">
 					<if test="val == 't'.toString">
 					title like concat('%', #{keyword}, '%')
@@ -32,5 +32,21 @@
 	select count(bno) from tbl_board
 	<include refid="search"></include>
 	</select>
+	
+	<insert id="insert">
+	insert into tbl_board (title, content, writer) values(#{title}, #{content}, #{writer})
+	</insert>
+	
+	<select id="selectOne" resultType="org.tufcookie.board.domain.Board">
+	select * from tbl_board where bno = #{bno}
+	</select>
+	
+	<update id="update">
+	update tbl_board set title = #{title}, content = #{content}, updatedate = now() where bno = #{bno}
+	</update>
+	
+	<delete id="delete">
+	delete from tbl_board where bno = #{bno}
+	</delete>
 
 </mapper>
