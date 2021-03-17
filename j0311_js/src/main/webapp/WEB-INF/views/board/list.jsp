@@ -6,7 +6,7 @@
 <!-- Page Heading -->
 <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
 
-<!--                     게시글 목록                        -->
+<!--                     Board list                        -->
 
 <div class="board_list">
   <ul class="list">
@@ -16,7 +16,7 @@
   </ul>
 </div>
 
-<!--                       검색 조건                       -->
+<!--                    Select Condition                    -->
 
 <div class="searchDiv">
   <select class="stype">
@@ -29,7 +29,7 @@
   <button class="searchBtn">검색</button>
 </div>
 
- <!--                     페이지네이션                          -->
+ <!--                     Pagination                          -->
 <div>
   <ul class="pagination">
 	<c:if test="${pageMaker.prev }">

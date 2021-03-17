@@ -25,7 +25,7 @@
   //ul
   const uploadUL = document.querySelector(".uploadResult");
   
-  document.querySelector("#uploadBtn").addEventListener("click", function(e){
+  document.querySelector("input").addEventListener("change", function(e){
 	  
 	  //formData 형식으로 보내기 위해서 FormData 객체를 생성
 	  const formData = new FormData();
@@ -37,17 +37,20 @@
 	  
 	  console.dir(input);
 	  
+	  let htmlCode = "";
 	  //files에 있는 file 하나하나를 formData에 추가합니다.
 	  for(let i = 0; i < files.length; i++) {
 		  
 		  //Controller의 MultipartFile[] files 변수명과 이름을 똑같이 맞춰줘야 한다.
 		  //아니면 컨트롤러 부분에서 @RequestParam(key)를 설정해 줘야한다.
 		  formData.append("files", files[i]);
-
+		  htmlCode += "<li>"+files[i].name+"</li>";
 	  }
 	  
+	  uploadUL.innerHTML += htmlCode;
+	  
 	  //fetch로 비동기 처리를 합니다. url은 "/upload", 방식은 post, 보낼 데이터는 formData
-	  fetch("/upload", {method:"post", body:formData})
+	 /*  fetch("/upload", {method:"post", body:formData})
 	  
 	  //then전에 UploadController 한번 갔다 와야겠죠
 	  .then(res => res.json()) //여기에서 res는 List<AttachFileDTO> list 가 반환됐죠
@@ -77,7 +80,7 @@
 		  
 		  console.dir(input);
 	  
-	  });
+	  }); */
 	  
   }, false);
   

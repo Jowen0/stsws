@@ -112,7 +112,7 @@ public class UploadController {
 			
 			try {
 				
-				multipartFile.transferTo(saveFile); // 업로드 된 파일을 savaFile 처리 한다.
+				multipartFile.transferTo(saveFile); //업로드 된 파일들의 실제 파일을 생성 한다.
 				
 				if(isImage) { //이미지 파일이라면
 					
