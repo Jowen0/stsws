@@ -141,8 +141,6 @@ addEvent(regBtn, "click", function(e) {
 	uploadResult.then(res => res.json())
 	.then(jsonObj => {
 		 
-		
-		 
 	 }
 	
 	//게시물 등록

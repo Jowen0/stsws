@@ -1,5 +1,0 @@
-package org.zerock.board.mapper;
-
-public interface BoardMapoper {
-
-}

@@ -10,13 +10,17 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,10 +28,6 @@ import org.zerock.dto.AttachFileDTO;
 
 import lombok.extern.log4j.Log4j;
 import net.coobird.thumbnailator.Thumbnailator;
-
-
-
-
 
 
 @CrossOrigin(origins = "*")
@@ -70,6 +70,31 @@ public class UploadController {
 		}
 		
 		return res;
+	}
+	
+	//415에러 - 파라미터 없이 동작하는지 먼저 확인한 후 RequestBody를 적용한다.
+	@DeleteMapping("removeFile")
+	public ResponseEntity<String> removeFile(@RequestBody AttachFileDTO dto) {
+		
+		log.info("remove............");
+		
+		log.info(dto);
+		
+		String filePath = "C:\\upload\\" + dto.getUploadPath();
+		String fileName = dto.getUuid()+"_"+dto.getFileName();
+		
+		if(dto.isImage()) {
+			
+			File thumb = new File(filePath+File.separator+"s_"+fileName);
+			thumb.delete();
+			
+		}
+		
+		File target = new File(filePath+File.separator+fileName);
+		target.delete();
+		
+		return new ResponseEntity<String>("success", HttpStatus.OK);
+		
 	}
 	
 	@PostMapping(value="/upload")

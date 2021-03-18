@@ -1,5 +1,0 @@
-package org.tufcookie.board.mapper;
-
-public interface BoardMapper {
-
-}

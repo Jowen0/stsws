@@ -1,5 +1,0 @@
-package org.zerock.time.mapper;
-
-public interface TimeMapper {
-
-}
