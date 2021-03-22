@@ -5,7 +5,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.4.xsd">
 
-<bean id="bcrypt" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+<bean id="customDetailsService" class="org.zerock.security.CustomUserDetailsService" />
 
 <security:http>
 
@@ -23,19 +24,11 @@
 
 </security:http>
 
-<security:authentication-manager>
+<security:authentication-manager> 
 
-	<security:authentication-provider>
+	<security:authentication-provider user-service-ref="customDetailsService">
 	
-	<security:password-encoder ref="bcrypt"/>
-	  
-	  <security:user-service>
-	  
-	    <security:user name="member" password="$2a$10$JSYlIvOhK8Dl9tN1aHbii.5xJzxCW6hKG4yyY/hiB78oGdFEQIafm" authorities="ROLE_MEMBER"/>
-	    
-	    <security:user name="admin" password="{noop}admin" authorities="ROLE_MEMBER, ROLE_ADMIN"/>
-	  
-	  </security:user-service>
+	<security:password-encoder ref="bcryptPasswordEncoder"/>
 	 
 	</security:authentication-provider>
 
