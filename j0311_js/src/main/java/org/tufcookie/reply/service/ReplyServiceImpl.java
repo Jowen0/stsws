@@ -18,33 +18,38 @@ public class ReplyServiceImpl implements ReplyService {
 	
 	@Override
 	public void register(ReplyVO vo) {
-		// TODO Auto-generated method stub
-
+		
+		mapper.insert(vo);
+		
 	}
 
 	@Override
 	public ReplyVO readOne(Integer rno) {
 		
 		
-		return null;
+		return mapper.selectOne(rno);
+		
 	}
 
 	@Override
 	public void modify(ReplyVO vo) {
-		// TODO Auto-generated method stub
-
+		
+		mapper.update(vo);
+		
 	}
 
 	@Override
 	public void remove(Integer rno) {
-		// TODO Auto-generated method stub
-
+		
+		mapper.delete(rno);
+		
 	}
 
 	@Override
 	public List<ReplyVO> getList(Integer bno, int skip) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return mapper.selectList(bno, skip);
+		
 	}
 
 }

@@ -18,15 +18,17 @@
     <input type="text" class="form-control" id="writer" value="${board.writer }" readonly="readonly">
   </div>
 
+<!--                     Reply list                        -->
+
+<div>
 <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
-  <thead>
+  <thead class="reply">
     <tr>
-      <th class="mdl-data-table__cell--non-numeric">Material</th>
-      <th>Quantity</th>
-      <th>Unit price</th>
+      <th>Writer</th>
+      <th>Context</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="reply_body">
     <tr>
       <td class="mdl-data-table__cell--non-numeric">${board.title }</td>
       <td>${board.content }</td>
@@ -37,17 +39,17 @@
       <td>50</td>
       <td>$1.25</td>
     </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-      <td>10</td>
-      <td>$2.35</td>
-    </tr>
   </tbody>
 </table>
+</div>
+
+<!--                     Board list                        -->
 
 <div class="board_list">
   <ul class="list">
+	<c:forEach items="${list }" var="board" >
   	  <li><a href="${board.bno }">${board }</a></li>
+	</c:forEach>
   </ul>
 </div>
 
@@ -101,6 +103,10 @@ addEvent(".listBtn", "click", function(e){
 	actionForm.submit();
 	
 }, false)
+
+const url = "/replies/list";
+
+fetch()
 
 </script>
 

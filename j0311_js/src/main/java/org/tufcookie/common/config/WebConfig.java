@@ -2,6 +2,7 @@ package org.tufcookie.common.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import org.tufcookie.board.config.BoardConfig;
+import org.tufcookie.reply.config.ReplyConfig;
 import org.tufcookie.time.config.TimeConfig;
 
 public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer{
@@ -11,7 +12,8 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 
 		return new Class[] {CommonConfig.class,
 							TimeConfig.class,
-							BoardConfig.class};
+							BoardConfig.class,
+							ReplyConfig.class};
 	}
 
 	@Override

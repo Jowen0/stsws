@@ -1,4 +1,4 @@
-package org.tufcookie.reply;
+package org.tufcookie.reply.mapper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,7 +46,7 @@ public class ReplyMapperTests {
 	}
 	
 	@Test
-	public void testDelete() {
+	public void testDelete() { 
 		
 		mapper.delete(1);
 		
